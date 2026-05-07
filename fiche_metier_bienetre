@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYBSO™ — Fiche Métier · Bien-être & Santé Naturelle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--vert:#052f31;--sauge:#5e6c5a;--clair:#b0b59e;--beige:#e3e0d7;--creme:#f8f6ef;--blanc:#ffffff}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--creme);color:var(--vert);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media print{.no-print{display:none!important}.page{page-break-after:always;min-height:auto;padding:40px}.hero{min-height:auto;padding:60px 40px}}
+.progress-bar{position:fixed;top:0;left:0;right:0;z-index:200;height:2px;background:var(--beige)}
+.progress-fill{height:100%;background:var(--sauge);width:0%;transition:width .1s}
+nav{position:fixed;top:2px;left:0;right:0;z-index:100;background:rgba(5,47,49,.97);padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(8px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--creme);text-decoration:none}
+.nav-links{display:flex;gap:6px}
+.nav-links a{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--clair);text-decoration:none;padding:6px 12px;border-radius:1px;transition:all .2s}
+.nav-links a:hover,.nav-links a.active{background:var(--sauge);color:var(--creme)}
+.nav-print{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--sauge);background:transparent;border:1px solid var(--sauge);padding:6px 16px;border-radius:1px;cursor:pointer;transition:all .2s}
+.nav-print:hover{background:var(--sauge);color:var(--creme)}
+.hero{min-height:100vh;background:var(--vert);display:flex;align-items:center;padding:120px 80px 80px;position:relative;overflow:hidden}
+.hero::before{content:'🌿';position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-size:360px;opacity:.03;pointer-events:none;line-height:1}
+.hero-inner{max-width:780px;position:relative;z-index:1}
+.hero-eyebrow{font-size:9px;font-weight:500;letter-spacing:5px;text-transform:uppercase;color:var(--clair);margin-bottom:6px;display:block}
+.hero-phase{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--sauge);margin-bottom:28px;display:block}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:300;color:var(--creme);line-height:1.06;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--clair)}
+.hero-desc{font-size:13px;color:var(--clair);line-height:1.9;max-width:540px;margin-bottom:40px}
+.hero-metiers{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:40px}
+.mtag{font-size:10px;color:var(--clair);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:5px 12px;border-radius:20px;cursor:default;transition:all .2s}
+.mtag:hover{background:rgba(94,108,90,.2);border-color:var(--sauge);color:var(--creme)}
+.mon-metier{background:rgba(255,255,255,.04);border:1px solid rgba(94,108,90,.4);border-radius:2px;padding:18px 22px;display:flex;align-items:center;gap:14px}
+.mon-metier label{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sauge);white-space:nowrap}
+.mon-metier input{flex:1;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.15);color:var(--creme);font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;font-style:italic;padding:4px 0;outline:none}
+.mon-metier input::placeholder{color:rgba(255,255,255,.15)}
+.mon-metier input:focus{border-bottom-color:var(--sauge)}
+.scroll-hint{position:absolute;bottom:36px;left:80px;display:flex;align-items:center;gap:14px;animation:bob 2.5s infinite}
+.scroll-hint span{font-size:8px;letter-spacing:3px;color:var(--clair);text-transform:uppercase}
+.scroll-line{width:36px;height:1px;background:var(--sauge)}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(5px);opacity:1}}
+.page{min-height:100vh;padding:96px 80px}
+.page-creme{background:var(--creme)}
+.page-beige{background:var(--beige)}
+.page-vert{background:var(--vert)}
+.page-blanc{background:var(--blanc)}
+.plabel{font-size:8px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--sauge);display:block;margin-bottom:10px}
+.page-vert .plabel{color:var(--clair)}
+.ptitle{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4.5vw,50px);font-weight:300;line-height:1.1;color:var(--vert);margin-bottom:14px}
+.ptitle em{font-style:italic;color:var(--sauge)}
+.page-vert .ptitle{color:var(--creme)}
+.page-vert .ptitle em{color:var(--clair)}
+.pdivider{width:36px;height:1px;background:var(--sauge);margin-bottom:40px}
+.psub{font-size:13px;color:var(--sauge);line-height:1.9;max-width:580px;margin-bottom:56px}
+.page-vert .psub{color:var(--clair)}
+.erreurs{display:flex;flex-direction:column;gap:20px;max-width:820px}
+.erreur{display:grid;grid-template-columns:72px 1fr;background:var(--blanc);border-radius:2px;overflow:hidden;transition:transform .3s}
+.erreur:hover{transform:translateX(5px)}
+.erreur-n{background:var(--vert);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--clair)}
+.erreur-b{padding:24px 28px}
+.erreur-t{font-size:14px;font-weight:600;color:var(--vert);margin-bottom:8px}
+.erreur-d{font-size:12px;color:var(--sauge);line-height:1.8;margin-bottom:12px}
+.erreur-r{font-size:11px;color:var(--sauge);display:flex;align-items:flex-start;gap:8px}
+.erreur-r::before{content:'→';flex-shrink:0}
+.zone-inp{background:rgba(94,108,90,.07);border:1px solid rgba(94,108,90,.2);border-radius:2px;padding:22px 26px;margin-top:40px;max-width:820px}
+.zone-inp label{font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sauge);display:block;margin-bottom:10px}
+.zone-inp textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(5,47,49,.12);font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--vert);resize:none;outline:none;padding:8px 0;line-height:1.6;min-height:52px}
+.zone-inp textarea::placeholder{color:rgba(5,47,49,.2)}
+.profils{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:56px}
+.profil{padding:36px 32px;cursor:pointer;border:2px solid transparent;transition:all .3s;position:relative}
+.profil.p-prat{background:var(--blanc)}
+.profil.p-coach{background:var(--creme)}
+.profil:hover{transform:translateY(-2px)}
+.profil.sel{border-color:var(--sauge)}
+.profil-badge{font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sauge);margin-bottom:12px;display:block}
+.profil h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--vert);margin-bottom:10px}
+.profil p{font-size:12px;color:var(--sauge);line-height:1.8;margin-bottom:12px}
+.profil-metiers{font-size:10px;color:var(--clair);font-style:italic;line-height:1.7}
+.profil-btn{margin-top:18px;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:9px 18px;border:1px solid var(--sauge);background:transparent;color:var(--sauge);border-radius:1px;cursor:pointer;transition:all .2s}
+.profil-btn:hover,.profil.sel .profil-btn{background:var(--sauge);color:var(--creme)}
+.profil-check{position:absolute;top:18px;right:18px;width:26px;height:26px;border-radius:50%;background:var(--sauge);color:var(--creme);display:flex;align-items:center;justify-content:center;font-size:12px;opacity:0;transition:opacity .3s}
+.profil.sel .profil-check{opacity:1}
+.arbre{max-width:820px}
+.arbre-lbl{font-size:8px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--sauge);margin-bottom:24px;display:block}
+.arbre-q{background:var(--blanc);border-radius:2px;padding:22px 26px;margin-bottom:14px;display:none}
+.arbre-q.vis{display:block;animation:fi .4s ease}
+.arbre-qt{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--vert);margin-bottom:14px}
+.arbre-opts{display:flex;gap:8px;flex-wrap:wrap}
+.arbre-opt{font-size:11px;font-weight:500;padding:8px 16px;border-radius:20px;cursor:pointer;border:1px solid var(--beige);background:var(--creme);color:var(--sauge);transition:all .2s}
+.arbre-opt:hover{border-color:var(--sauge);color:var(--vert)}
+.arbre-opt.sel{border-color:var(--vert);background:var(--vert);color:var(--creme)}
+.niche-res{background:var(--vert);border-radius:2px;padding:32px;display:none;margin-top:20px}
+.niche-res.vis{display:block;animation:fi .5s ease}
+.niche-lbl{font-size:8px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--clair);margin-bottom:10px;display:block}
+.niche-res h4{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--creme);margin-bottom:8px}
+.niche-res p{font-size:12px;color:var(--clair);line-height:1.8;margin-bottom:16px}
+.niche-cible{font-size:11px;color:var(--clair);display:flex;align-items:center;gap:8px}
+.niche-cible::before{content:'✦';color:var(--sauge)}
+.niche-transfo{margin-top:14px;padding:14px 18px;background:rgba(255,255,255,.06);border-left:2px solid var(--sauge);font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--creme);line-height:1.6}
+@keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.offre-tabs{display:flex;margin-bottom:36px}
+.offre-tab{padding:10px 24px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border:none;background:var(--beige);color:var(--sauge);transition:all .2s}
+.offre-tab.act{background:var(--vert);color:var(--creme)}
+.offre-tab:first-child{border-radius:1px 0 0 1px}
+.offre-tab:last-child{border-radius:0 1px 1px 0}
+.offre-panel{display:none}
+.offre-panel.act{display:block;animation:fi .3s ease}
+.offre-ex{background:var(--blanc);border-radius:2px;overflow:hidden;margin-bottom:36px;max-width:820px}
+.offre-hdr{background:var(--vert);padding:26px 32px}
+.offre-etag{font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--clair);margin-bottom:8px;display:block}
+.offre-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--creme);margin-bottom:4px}
+.offre-tagline{font-size:12px;color:var(--clair);font-style:italic}
+.offre-body{padding:32px}
+.offre-includes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+.incl{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--sauge);line-height:1.6}
+.incl::before{content:'✦';color:var(--sauge);flex-shrink:0;margin-top:2px;font-size:9px}
+.offre-diff{background:rgba(94,108,90,.08);border-left:2px solid var(--sauge);padding:18px 22px}
+.offre-diff-t{font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sauge);margin-bottom:8px;display:block}
+.offre-diff p{font-size:12px;color:var(--sauge);line-height:1.8}
+.tarif-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:820px;margin-bottom:36px}
+.tarif{padding:26px 22px}
+.t1{background:var(--creme)}.t2{background:var(--beige)}.t3{background:var(--vert)}
+.tarif-lbl{font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:block}
+.t1 .tarif-lbl,.t2 .tarif-lbl{color:var(--sauge)}.t3 .tarif-lbl{color:var(--clair)}
+.tarif-price{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;line-height:1;margin-bottom:8px}
+.t1 .tarif-price,.t2 .tarif-price{color:var(--vert)}.t3 .tarif-price{color:var(--creme)}
+.tarif-desc{font-size:11px;line-height:1.7}
+.t1 .tarif-desc,.t2 .tarif-desc{color:var(--sauge)}.t3 .tarif-desc{color:var(--clair)}
+.offre-perso{max-width:820px}
+.offre-perso-lbl{font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sauge);margin-bottom:16px;display:block}
+.offre-perso-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.inp-f{display:flex;flex-direction:column;gap:6px}
+.inp-f label{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--clair)}
+.inp-f input{background:var(--blanc);border:1px solid var(--beige);border-radius:1px;padding:10px 14px;font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--vert);outline:none;transition:border-color .2s}
+.inp-f input:focus{border-color:var(--sauge)}
+.inp-f input::placeholder{color:rgba(5,47,49,.18)}
+.objections{display:flex;flex-direction:column;gap:16px;max-width:820px}
+.obj{background:var(--blanc);border-radius:2px;overflow:hidden}
+.obj-btn{width:100%;text-align:left;background:none;border:none;padding:24px 28px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.obj-q{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--vert);font-style:italic}
+.obj-icon{color:var(--sauge);font-size:20px;transition:transform .3s;flex-shrink:0}
+.obj-btn.open .obj-icon{transform:rotate(45deg)}
+.obj-body{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 28px}
+.obj-body.open{max-height:360px;padding:0 28px 24px}
+.obj-sig{font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sauge);margin-bottom:8px;display:block}
+.obj-mean{font-size:12px;color:var(--sauge);line-height:1.8;margin-bottom:16px}
+.obj-rlbl{font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--vert);margin-bottom:8px;display:block}
+.obj-rep{background:var(--creme);border-left:2px solid var(--sauge);padding:14px 18px;font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--vert);line-height:1.6}
+.obj-perso{margin-top:10px}
+.obj-perso label{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--clair);display:block;margin-bottom:5px}
+.obj-perso input{width:100%;background:transparent;border:none;border-bottom:1px solid var(--beige);padding:7px 0;font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--vert);outline:none;transition:border-color .2s}
+.obj-perso input:focus{border-bottom-color:var(--sauge)}
+.obj-perso input::placeholder{color:rgba(5,47,49,.18)}
+.hooks-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px}
+.hook-pilier{background:var(--blanc);border-radius:2px;padding:28px}
+.hook-pilier.span2{grid-column:1/-1}
+.pilier-badge{display:inline-block;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:18px}
+.p-aim .pilier-badge{background:rgba(5,47,49,.07);color:var(--vert)}
+.p-rev .pilier-badge{background:rgba(94,108,90,.1);color:var(--sauge)}
+.p-sto .pilier-badge{background:rgba(176,181,158,.2);color:var(--sauge)}
+.hook-item{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--beige)}
+.hook-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.hook-sujet{font-size:11px;font-weight:600;color:var(--vert);margin-bottom:6px}
+.hook-txt{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--sauge);line-height:1.6;padding:10px 14px;background:var(--creme);border-left:2px solid var(--sauge);margin-bottom:7px}
+.hook-cp{font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--sauge);background:none;border:none;cursor:pointer;padding:0;transition:opacity .2s}
+.hook-cp:hover{opacity:.6}
+.hook-cp.copied{color:var(--clair)}
+.plan-tl{max-width:700px}
+.plan-w{display:grid;grid-template-columns:88px 1fr;gap:0;margin-bottom:2px}
+.plan-wn{background:var(--sauge);padding:24px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.plan-wlbl{font-size:7px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,239,.6)}
+.plan-wnum{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--creme);line-height:1}
+.plan-wb{background:rgba(255,255,255,.06);padding:24px 28px}
+.plan-wtheme{font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--clair);margin-bottom:8px;display:block}
+.plan-wtitle{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--creme);margin-bottom:10px}
+.plan-acts{display:flex;flex-direction:column;gap:7px}
+.plan-act{display:flex;align-items:flex-start;gap:10px}
+.plan-chk{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2);flex-shrink:0;cursor:pointer;transition:all .2s;margin-top:2px;display:flex;align-items:center;justify-content:center}
+.plan-chk.done{background:var(--sauge);border-color:var(--sauge)}
+.plan-chk.done::after{content:'✓';color:white;font-size:9px;font-weight:600}
+.plan-atxt{font-size:12px;color:var(--clair);line-height:1.7}
+.cta-final{background:var(--sauge);padding:44px 80px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.cta-txt h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--creme);margin-bottom:6px}
+.cta-txt p{font-size:12px;color:rgba(248,246,239,.6);line-height:1.7}
+.cta-links{display:flex;gap:12px;flex-shrink:0}
+.cta-btn{padding:12px 24px;border-radius:1px;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .2s;white-space:nowrap}
+.cta-dark{background:var(--vert);color:var(--creme)}
+.cta-dark:hover{background:#021e20}
+.cta-light{background:transparent;border:1px solid var(--creme);color:var(--creme)}
+.cta-light:hover{background:var(--creme);color:var(--sauge)}
+@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.hero,.page{padding-left:24px;padding-right:24px}.hero{padding-top:96px}.profils,.offre-includes,.hooks-grid,.offre-perso-grid,.tarif-grid{grid-template-columns:1fr}.hook-pilier.span2{grid-column:auto}.plan-w{grid-template-columns:64px 1fr}.cta-final{flex-direction:column;padding:44px 24px}}
+</style>
+</head>
+<body>
+<div class="progress-bar"><div class="progress-fill" id="prog"></div></div>
+<nav class="no-print">
+  <a href="#" class="nav-logo">LYBSO™</a>
+  <div class="nav-links">
+    <a href="#erreurs">Erreurs</a><a href="#niche">Niche</a><a href="#offre">Offre</a><a href="#objections">Objections</a><a href="#contenu">Contenu</a><a href="#plan">Plan</a>
+  </div>
+  <button class="nav-print" onclick="window.print()">Imprimer</button>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Fiche Métier LYBSO™ · 01 / 08</span>
+    <span class="hero-phase">Phase B+S — Brand & Strategy · Clôture Semaine 7</span>
+    <h1>Bien-être &<br><em>Santé Naturelle</em></h1>
+    <p class="hero-desc">Tu as ton offre, ton prix, ta marque et ton Content Engine™. Ce guide t'aide à tout appliquer concrètement dans la réalité de ton secteur — avec des exemples précis, des fourchettes réalistes et des mots exacts à utiliser. Juste avant de lancer ton Sprint.</p>
+    <div class="hero-metiers">
+      <span class="mtag">Naturopathe</span><span class="mtag">Sophrologue</span><span class="mtag">Hypnothérapeute</span><span class="mtag">Réflexologue</span><span class="mtag">Acupunctrice</span><span class="mtag">Herboriste</span><span class="mtag">Aromathérapeute</span><span class="mtag">Nutritionniste</span><span class="mtag">Coach en nutrition</span><span class="mtag">Ostéopathe libérale</span><span class="mtag">Sage-femme libérale</span><span class="mtag">Praticienne ayurvédique</span><span class="mtag">Médecine traditionnelle chinoise</span>
+    </div>
+    <div class="mon-metier">
+      <label>Mon métier précis</label>
+      <input type="text" placeholder="ex : Sophrologue spécialisée anxiété" id="monMetier">
+    </div>
+  </div>
+  <div class="scroll-hint no-print"><div class="scroll-line"></div><span>Défiler</span></div>
+</section>
+
+<section class="page page-creme" id="erreurs">
+  <span class="plabel">01 — Comprendre</span>
+  <h2 class="ptitle">Les 3 erreurs <em>les plus fréquentes</em><br>dans ton secteur</h2>
+  <div class="pdivider"></div>
+  <p class="psub">Tu te reconnais dans au moins une. C'est normal — personne ne t'a appris à construire une offre dans ce secteur. C'est exactement pour ça que tu es dans LYBSO™.</p>
+  <div class="erreurs">
+    <div class="erreur"><div class="erreur-n">01</div><div class="erreur-b"><div class="erreur-t">Proposer "de la naturopathie" ou "de la sophrologie" sans angle précis</div><div class="erreur-d">Tu es formée sur un spectre très large — alimentation, sommeil, stress, émotions, plantes, soins naturels. Et tu essaies de tout couvrir dans ton offre. Ta cliente potentielle ne comprend pas pourquoi te choisir toi plutôt qu'une autre. Elle n'identifie pas SON problème dans ce que tu proposes.</div><div class="erreur-r">Résultat : personne ne se reconnaît vraiment dans ton profil, les DM restent silencieux</div></div></div>
+    <div class="erreur"><div class="erreur-n">02</div><div class="erreur-b"><div class="erreur-t">Vendre des consultations ou séances à l'unité</div><div class="erreur-d">La consultation ponctuelle est le modèle par défaut dans ton secteur — et c'est aussi le modèle qui plafonne tes revenus naturellement. Une consultation à 70-90€ demande énormément de clientes pour atteindre un objectif sérieux. Et les résultats profonds que tu produis nécessitent au minimum 3 mois d'accompagnement. Tu le sais — mais tu ne le vends pas encore ainsi.</div><div class="erreur-r">Résultat : agenda difficile à remplir, revenus instables, clientes qui ne voient pas de transformation durable</div></div></div>
+    <div class="erreur"><div class="erreur-n">03</div><div class="erreur-b"><div class="erreur-t">Fixer son prix en regardant ce que font les autres dans son secteur</div><div class="erreur-d">Tu t'alignes approximativement sur "le prix du marché" en te rassurant que c'est raisonnable. Mais le prix du marché dans le bien-être naturel est historiquement sous-évalué — parce que tout le monde fait la même chose. Toi tu as calculé ton prix dans le Financial Tracker™ : tu sais maintenant ce dont tu as réellement besoin.</div><div class="erreur-r">Résultat : toujours trop bas pour être rentable, impossible à défendre en conversation</div></div></div>
+  </div>
+  <div class="zone-inp"><label>L'erreur que je reconnais le plus dans ma façon de travailler</label><textarea placeholder="Écris honnêtement — c'est pour toi..." rows="3"></textarea></div>
+</section>
+
+<section class="page page-beige" id="niche">
+  <span class="plabel">02 — Décider</span>
+  <h2 class="ptitle">Ton profil &<br><em>ta niche en 2 minutes</em></h2>
+  <div class="pdivider"></div>
+  <p class="psub">Dans cette catégorie, deux profils très différents. Identifie le tien — il oriente ton offre, ta communication et ton tunnel de vente.</p>
+  <div class="profils">
+    <div class="profil p-prat" id="pA"><span class="profil-badge">Profil A · La Praticienne</span><div class="profil-check">✓</div><h3>Praticienne</h3><p>Tu travailles avec le corps, les plantes, les techniques naturelles. Tu proposes des consultations, des soins, des protocoles. Ton approche est holistique et personnalisée.</p><div class="profil-metiers">Naturopathe · Réflexologue · Acupunctrice · Herboriste · Aromathérapeute · Praticienne ayurvédique · MTC · Ostéopathe · Sage-femme</div><button class="profil-btn" onclick="selProfil('A')">Je suis Praticienne</button></div>
+    <div class="profil p-coach" id="pB"><span class="profil-badge">Profil B · La Coach / Thérapeute</span><div class="profil-check">✓</div><h3>Coach / Thérapeute</h3><p>Tu travailles sur le mental, les émotions, le comportement. Tu accompagnes par la parole ou des techniques psychocorporelles. Ta transformation est invisible mais tout aussi profonde.</p><div class="profil-metiers">Sophrologue · Hypnothérapeute · Coach en nutrition · Nutritionniste · Coach bien-être · Médecin intégratif</div><button class="profil-btn" onclick="selProfil('B')">Je suis Coach / Thérapeute</button></div>
+  </div>
+  <div class="arbre">
+    <span class="arbre-lbl">✦ Trouve ta niche — 3 questions, 2 minutes</span>
+    <div class="arbre-q vis" id="q1"><div class="arbre-qt">Quelle est la problématique principale de tes clientes idéales ?</div><div class="arbre-opts"><button class="arbre-opt" onclick="aStep(1,'hormones')">Hormones & cycle</button><button class="arbre-opt" onclick="aStep(1,'stress')">Stress & épuisement</button><button class="arbre-opt" onclick="aStep(1,'digestion')">Digestion & alimentation</button><button class="arbre-opt" onclick="aStep(1,'mental')">Mental & émotions</button><button class="arbre-opt" onclick="aStep(1,'sommeil')">Sommeil & récupération</button><button class="arbre-opt" onclick="aStep(1,'perinatalite')">Périnatalité & corps féminin</button></div></div>
+    <div class="arbre-q" id="q2"><div class="arbre-qt">Quel est le profil de vie de ta cliente idéale ?</div><div class="arbre-opts"><button class="arbre-opt" onclick="aStep(2,'active')">Femme active / entrepreneure</button><button class="arbre-opt" onclick="aStep(2,'maman')">Jeune maman / post-partum</button><button class="arbre-opt" onclick="aStep(2,'perimenopause')">Femme 40-55 ans en transition</button><button class="arbre-opt" onclick="aStep(2,'jeune')">Femme 25-35 ans en quête d'équilibre</button></div></div>
+    <div class="arbre-q" id="q3"><div class="arbre-qt">Quel résultat concret veut-elle obtenir en 3 mois ?</div><div class="arbre-opts"><button class="arbre-opt" onclick="aStep(3,'energie')">Retrouver de l'énergie et dormir vraiment</button><button class="arbre-opt" onclick="aStep(3,'calme')">Sortir du stress et retrouver le calme</button><button class="arbre-opt" onclick="aStep(3,'corps')">Relation apaisée à son corps</button><button class="arbre-opt" onclick="aStep(3,'cycle')">Équilibre hormonal et cycle stable</button></div></div>
+    <div class="niche-res" id="nicheRes"><span class="niche-lbl">✦ Ta niche recommandée</span><h4 id="nicheT">—</h4><p id="nicheD">—</p><div class="niche-cible" id="nicheC">—</div><div class="niche-transfo" id="nicheTr">—</div></div>
+  </div>
+</section>
+
+<section class="page page-creme" id="offre">
+  <span class="plabel">03 — Construire</span>
+  <h2 class="ptitle">Ton offre signature <em>type</em><br>& grille tarifaire réaliste</h2>
+  <div class="pdivider"></div>
+  <p class="psub">Voici à quoi ressemble une offre complète dans ton secteur. Compare avec ce que tu as construit dans l'Offer Builder™ et ajuste si nécessaire.</p>
+  <div class="offre-tabs no-print"><button class="offre-tab act" onclick="swOffre('prat')">Profil Praticienne</button><button class="offre-tab" onclick="swOffre('coach')">Profil Coach / Thérapeute</button></div>
+  <div class="offre-panel act" id="offre-prat">
+    <div class="offre-ex"><div class="offre-hdr"><span class="offre-etag">Exemple d'offre signature — Praticienne</span><div class="offre-name">Programme Équilibre™ — 12 semaines</div><div class="offre-tagline">Pour retrouver un équilibre hormonal, une énergie stable et une relation sereine à ton corps</div></div><div class="offre-body"><div class="offre-includes"><div class="incl">Bilan initial complet 2h — état de santé, mode de vie, objectifs</div><div class="incl">4 consultations de suivi 45 min — adaptées à l'évolution</div><div class="incl">Plan naturo personnalisé évolutif — alimentation, compléments, hygiène de vie</div><div class="incl">Bibliothèque de recettes et protocoles personnalisés</div><div class="incl">Messagerie WhatsApp entre les séances</div><div class="incl">Bilan de clôture + protocole de maintien autonome</div></div><div class="offre-diff"><span class="offre-diff-t">✦ Le différenciant clé de ce secteur</span><p>La durée de 12 semaines est un argument de vente — pas un frein. Les changements d'hygiène de vie prennent du temps à s'installer. Présente-le comme une garantie de résultats durables. "Je ne fais pas de consultations ponctuelles parce que je sais que ça ne suffit pas pour transformer quelque chose en profondeur."</p></div></div></div>
+    <div class="tarif-grid"><div class="tarif t1"><span class="tarif-lbl">Démarrage</span><div class="tarif-price">800 — 1 200€</div><div class="tarif-desc">Premières offres, peu de témoignages. Priorité : obtenir des résultats clients et collecter des preuves sociales.</div></div><div class="tarif t2"><span class="tarif-lbl">Établie</span><div class="tarif-price">1 200 — 2 000€</div><div class="tarif-desc">Quelques résultats documentés, spécialité de plus en plus claire, audience engagée.</div></div><div class="tarif t3"><span class="tarif-lbl">Premium</span><div class="tarif-price">2 000 — 3 500€</div><div class="tarif-desc">Témoignages solides, spécialité forte et reconnue, résultats mesurables et reproductibles.</div></div></div>
+  </div>
+  <div class="offre-panel" id="offre-coach">
+    <div class="offre-ex"><div class="offre-hdr"><span class="offre-etag">Exemple d'offre signature — Coach / Thérapeute</span><div class="offre-name">Programme Sérénité™ — 10 semaines</div><div class="offre-tagline">Pour passer d'une anxiété chronique à un état de calme durable — sans médicaments, sans pression</div></div><div class="offre-body"><div class="offre-includes"><div class="incl">Séances hebdomadaires 1h en visio ou présentiel</div><div class="incl">Enregistrements audios personnalisés entre les séances</div><div class="incl">Protocole personnel remis en fin de programme</div><div class="incl">Accès WhatsApp pour les moments de pression forte</div><div class="incl">Exercices pratiques à appliquer au quotidien</div><div class="incl">Séance bilan finale + plan d'autonomie</div></div><div class="offre-diff"><span class="offre-diff-t">✦ Le différenciant clé de ce secteur</span><p>En sophrologie et hypnose, le format audio personnalisé est un bonus très différenciant — et peu coûteux à produire. Un enregistrement que la cliente utilise seule entre les séances augmente significativement les résultats, la fidélisation et la valeur perçue. Si tu ne le fais pas encore, intègre-le dès ta prochaine offre.</p></div></div></div>
+    <div class="tarif-grid"><div class="tarif t1"><span class="tarif-lbl">Démarrage</span><div class="tarif-price">600 — 900€</div><div class="tarif-desc">Premières offres, peu de témoignages. Priorité : résultats clients documentés.</div></div><div class="tarif t2"><span class="tarif-lbl">Établie</span><div class="tarif-price">900 — 1 500€</div><div class="tarif-desc">Quelques résultats concrets, spécialité affirmée, audience engagée.</div></div><div class="tarif t3"><span class="tarif-lbl">Premium</span><div class="tarif-price">1 500 — 2 500€</div><div class="tarif-desc">Témoignages solides, expertise reconnue dans ta niche, résultats reproductibles.</div></div></div>
+  </div>
+  <div class="offre-perso"><span class="offre-perso-lbl">✦ Mon offre personnalisée — je valide</span><div class="offre-perso-grid"><div class="inp-f"><label>Nom de mon offre</label><input type="text" placeholder="Programme..."></div><div class="inp-f"><label>Durée</label><input type="text" placeholder="ex : 10 semaines"></div><div class="inp-f"><label>Mon prix</label><input type="text" placeholder="ex : 1 200€"></div></div></div>
+</section>
+
+<section class="page page-beige" id="objections">
+  <span class="plabel">04 — Se préparer</span>
+  <h2 class="ptitle">Les objections <em>de ton secteur</em><br>& les mots exacts à dire</h2>
+  <div class="pdivider"></div>
+  <p class="psub">Ces objections, tu vas les entendre. Ce ne sont pas des refus — ce sont des questions déguisées. Voilà comment les lire et quoi répondre exactement.</p>
+  <div class="objections">
+    <div class="obj"><button class="obj-btn" onclick="togObj(this)"><div class="obj-q">"C'est cher pour de la naturopathie / sophrologie."</div><div class="obj-icon">+</div></button><div class="obj-body"><span class="obj-sig">Ce qu'elle veut vraiment dire</span><div class="obj-mean">Elle ne remet pas en cause ta valeur — elle n'est pas encore convaincue que ÇA va marcher pour elle spécifiquement. Elle a peut-être déjà essayé des choses qui n'ont pas fonctionné. Elle a besoin d'être rassurée sur le résultat, pas défendue sur le prix.</div><span class="obj-rlbl">Ce que tu dis — les mots exacts</span><div class="obj-rep">"Je comprends tout à fait. Est-ce que tu veux qu'on regarde ensemble si ta situation correspond à ce que j'accompagne ? Pas d'engagement — juste 20 minutes pour voir si je peux vraiment t'aider."</div><div class="obj-perso"><label>Ma version personnalisée</label><input type="text" placeholder="Adapte à ta voix..."></div></div></div>
+    <div class="obj"><button class="obj-btn" onclick="togObj(this)"><div class="obj-q">"Je vais réfléchir / ce n'est pas le bon moment."</div><div class="obj-icon">+</div></button><div class="obj-body"><span class="obj-sig">Ce qu'elle veut vraiment dire</span><div class="obj-mean">Il reste un doute non formulé — sur le résultat, sur l'engagement ou sur le prix. "Je vais réfléchir" est presque toujours une façon d'éviter de dire non sans avoir à l'expliquer.</div><span class="obj-rlbl">Ce que tu dis — les mots exacts</span><div class="obj-rep">"Bien sûr, prends le temps qu'il te faut. Est-ce qu'il y a quelque chose de spécifique qui te retient ? Je préfère qu'on en parle maintenant plutôt que tu repartes avec une question sans réponse."</div><div class="obj-perso"><label>Ma version personnalisée</label><input type="text" placeholder="Adapte à ta voix..."></div></div></div>
+    <div class="obj"><button class="obj-btn" onclick="togObj(this)"><div class="obj-q">"J'ai déjà essayé et ça n'a pas vraiment fonctionné."</div><div class="obj-icon">+</div></button><div class="obj-body"><span class="obj-sig">Ce qu'elle veut vraiment dire</span><div class="obj-mean">Elle a été déçue avant. Elle cherche encore une solution — ce qui est un signal positif. Tu dois lui montrer en quoi ton approche est différente de ce qu'elle a déjà vécu, sans dévaloriser ce qu'elle a essayé.</div><span class="obj-rlbl">Ce que tu dis — les mots exacts</span><div class="obj-rep">"Merci de me le dire — c'est important. Est-ce que tu peux me raconter ce que tu as essayé et ce qui n'a pas fonctionné ? Ça me permettra de te dire honnêtement si ce que je propose est différent pour toi."</div><div class="obj-perso"><label>Ma version personnalisée</label><input type="text" placeholder="Adapte à ta voix..."></div></div></div>
+    <div class="obj"><button class="obj-btn" onclick="togObj(this)"><div class="obj-q">"Je n'ai pas le temps de suivre un accompagnement."</div><div class="obj-icon">+</div></button><div class="obj-body"><span class="obj-sig">Ce qu'elle veut vraiment dire</span><div class="obj-mean">Elle a peur de ne pas honorer l'engagement — pas vraiment de manquer de temps. Quantifie l'engagement réel et laisse-la décider avec les vraies données.</div><span class="obj-rlbl">Ce que tu dis — les mots exacts</span><div class="obj-rep">"Mon programme demande environ [X heures] par semaine — une séance de [durée] et quelques minutes de pratique autonome. Est-ce que c'est quelque chose que tu penses pouvoir tenir ?"</div><div class="obj-perso"><label>Ma version personnalisée</label><input type="text" placeholder="Adapte à ta voix..."></div></div></div>
+  </div>
+</section>
+
+<section class="page page-blanc" id="contenu">
+  <span class="plabel">05 — Publier</span>
+  <h2 class="ptitle">Ton contenu type &<br><em>tes hooks prêts à adapter</em></h2>
+  <div class="pdivider"></div>
+  <p class="psub">Ces hooks sont adaptés à ton secteur. Copie, adapte à ta voix, publie. L'Aimant attire. Le Réveil connecte. Le Storytelling Vente convertit.</p>
+  <div class="hooks-grid">
+    <div class="hook-pilier p-aim span2"><span class="pilier-badge">Aimant — 50% de ton contenu</span>
+      <div class="hook-item"><div class="hook-sujet">Les signaux corporels ignorés</div><div class="hook-txt" id="h1">"Ton corps t'a prévenue. Tu n'as juste pas su lire les signaux. Voilà les 3 que mes clientes ignoraient toutes avant de me consulter."</div><button class="hook-cp" onclick="cpHook('h1',this)">✦ Copier ce hook</button></div>
+      <div class="hook-item"><div class="hook-sujet">La fatigue chronique mal comprise</div><div class="hook-txt" id="h2">"Si tu te sens épuisée même après 8h de sommeil — ton problème n'est pas le sommeil. Et personne ne t'a encore expliqué pourquoi."</div><button class="hook-cp" onclick="cpHook('h2',this)">✦ Copier ce hook</button></div>
+      <div class="hook-item"><div class="hook-sujet">L'erreur courante dans ton domaine</div><div class="hook-txt" id="h3">"La plupart des femmes qui essaient de rééquilibrer leurs hormones font exactement la même erreur. Et c'est souvent ce qu'on leur a conseillé de faire."</div><button class="hook-cp" onclick="cpHook('h3',this)">✦ Copier ce hook</button></div>
+      <div class="hook-item"><div class="hook-sujet">Le vrai problème derrière le symptôme</div><div class="hook-txt" id="h4">"Ce n'est pas le stress qui t'épuise. C'est ce que ton corps fait pour compenser le stress depuis des mois. La nuance change tout ce qu'on fait ensuite."</div><button class="hook-cp" onclick="cpHook('h4',this)">✦ Copier ce hook</button></div>
+      <div class="hook-item"><div class="hook-sujet">La question que personne ne pose</div><div class="hook-txt" id="h5">"Avant de changer ton alimentation, ton sommeil ou tes compléments — as-tu déjà regardé ce que ton système nerveux essaie de te dire ?"</div><button class="hook-cp" onclick="cpHook('h5',this)">✦ Copier ce hook</button></div>
+    </div>
+    <div class="hook-pilier p-rev"><span class="pilier-badge">Réveil — 20% de ton contenu</span>
+      <div class="hook-item"><div class="hook-sujet">Le miroir de sa situation</div><div class="hook-txt" id="h6">"Tu gères. Tu tiens. Tu continues. Mais quelque part, tu sais que ça ne peut pas durer indéfiniment à ce rythme."</div><button class="hook-cp" onclick="cpHook('h6',this)">✦ Copier ce hook</button></div>
+      <div class="hook-item"><div class="hook-sujet">La bascule de regard</div><div class="hook-txt" id="h7">"Prendre soin de toi n'est pas un luxe que tu mériteras quand tu auras moins à faire. C'est la condition pour tenir avec tout ce que tu as à faire."</div><button class="hook-cp" onclick="cpHook('h7',this)">✦ Copier ce hook</button></div>
+      <div class="hook-item"><div class="hook-sujet">La permission de vouloir mieux</div><div class="hook-txt" id="h8">"Il y a une version de toi qui se lève le matin sans se demander comment elle va tenir la journée. Elle n'est pas si loin."</div><button class="hook-cp" onclick="cpHook('h8',this)">✦ Copier ce hook</button></div>
+    </div>
+    <div class="hook-pilier p-sto"><span class="pilier-badge">Storytelling Vente — 10% de ton contenu</span>
+      <div class="hook-item"><div class="hook-sujet">Le témoignage narratif</div><div class="hook-txt" id="h9">"Elle m'a dit que c'était sa dernière tentative. Qu'elle avait essayé tout ce qu'on lui avait conseillé. Et qu'elle ne savait plus quoi faire de son corps."</div><button class="hook-cp" onclick="cpHook('h9',this)">✦ Copier ce hook</button></div>
+      <div class="hook-item"><div class="hook-sujet">L'invitation directe</div><div class="hook-txt" id="h10">"Si tu te reconnais dans ce que je viens de décrire — réponds à ce message. On regarde ensemble si je peux vraiment t'aider. Sans engagement."</div><button class="hook-cp" onclick="cpHook('h10',this)">✦ Copier ce hook</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="page page-vert" id="plan">
+  <span class="plabel">06 — Agir</span>
+  <h2 class="ptitle">Ton plan <em>4 semaines</em><br>avant le Sprint</h2>
+  <div class="pdivider"></div>
+  <p class="psub">Tu as tout construit en 7 semaines. Ce plan démarre maintenant — il te mène directement au Jour 1 de ton Sprint. Coche chaque action au fur et à mesure.</p>
+  <div class="plan-tl">
+    <div class="plan-w"><div class="plan-wn"><span class="plan-wlbl">Semaine</span><span class="plan-wnum">1</span></div><div class="plan-wb"><span class="plan-wtheme">Commencer à publier</span><div class="plan-wtitle">Tes premiers posts Aimant</div><div class="plan-acts"><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Publie 2 posts Aimant sur le problème central de ta niche — utilise les hooks de la page précédente</div></div><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Lance 1 story sondage : "Tu vis aussi ça ?" — note chaque personne qui répond OUI</div></div><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Réponds en DM à chaque OUI — écoute, ne vends pas encore</div></div></div></div></div>
+    <div class="plan-w"><div class="plan-wn"><span class="plan-wlbl">Semaine</span><span class="plan-wnum">2</span></div><div class="plan-wb"><span class="plan-wtheme">Créer le lien</span><div class="plan-wtitle">Ta Big Story + première preuve sociale</div><div class="plan-acts"><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Publie ta Big Story — ton moment de bascule, pourquoi tu fais ce métier vraiment</div></div><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Publie 1 Réveil — utilise un des hooks de la page 5 et adapte-le à ta voix</div></div><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Contacte 3 anciennes clientes pour collecter un témoignage</div></div></div></div></div>
+    <div class="plan-w"><div class="plan-wn"><span class="plan-wlbl">Semaine</span><span class="plan-wnum">3</span></div><div class="plan-wb"><span class="plan-wtheme">Prouver et proposer</span><div class="plan-wtitle">Ton premier Storytelling Vente</div><div class="plan-acts"><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Publie 1 Storytelling Vente avec le témoignage collecté — avant, chemin, après, invitation</div></div><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Présente ton offre à 3 personnes qualifiées — annonce ton prix sans baisser les yeux</div></div><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Note les objections que tu entends — tu as les réponses exactes dans ce guide</div></div></div></div></div>
+    <div class="plan-w"><div class="plan-wn"><span class="plan-wlbl">Semaine</span><span class="plan-wnum">4</span></div><div class="plan-wb"><span class="plan-wtheme">Préparer le Sprint</span><div class="plan-wtitle">Tout prêt pour le Jour 1</div><div class="plan-acts"><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Note tes 10-20 prospects chauds — les personnes qui ont interagi ces 3 semaines</div></div><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Configure ton mot clé ManyChat et teste ta séquence DM automatique</div></div><div class="plan-act"><div class="plan-chk" onclick="togChk(this)"></div><div class="plan-atxt">Bloque tes dates J1 → J10 dans ton agenda — le Sprint démarre dans 7 jours</div></div></div></div></div>
+  </div>
+</section>
+
+<div class="cta-final no-print">
+  <div class="cta-txt"><h3>Retourner dans LYBSO™</h3><p>Ta fiche est complète. Reprends ton Offer Builder™ et ton Financial Tracker™ pour ajuster avec ce que tu viens de découvrir.</p></div>
+  <div class="cta-links"><a href="#" class="cta-btn cta-dark">Offer Builder™</a><a href="#" class="cta-btn cta-light">Financial Tracker™</a></div>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{const t=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('prog').style.width=(window.scrollY/t*100)+'%'});
+const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-80)c=s.id});nls.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c))});
+function selProfil(p){document.getElementById('pA').classList.toggle('sel',p==='A');document.getElementById('pB').classList.toggle('sel',p==='B')}
+let aS={};
+const N={'hormones+active':{t:'Équilibre hormonal pour femmes actives',d:'Tu accompagnes des femmes de 25-45 ans qui subissent les effets du déséquilibre hormonal — fatigue, irritabilité, cycle irrégulier — sans que personne ne les ait aidées à comprendre pourquoi.',c:'Femmes actives 25-45 ans · SPM · SOPK · Périménopause',tr:'"En 12 semaines, retrouver un cycle régulier, une énergie stable et une relation sereine à ton corps."'},'hormones+perimenopause':{t:'Accompagnement périménopause & transition',d:'Tu aides des femmes de 40-55 ans à traverser cette transition avec clarté et sérénité — en comprenant ce qui se passe dans leur corps et en ajustant naturellement.',c:'Femmes 40-55 ans en périménopause ou ménopause',tr:'"Vivre cette transition non pas comme une perte, mais comme une nouvelle façon d\'habiter ton corps."'},'stress+active':{t:'Gestion du stress & récupération pour femmes surmenées',d:'Tu t\'adresses aux femmes qui ont tout — la carrière, la famille, les projets — mais qui ne récupèrent plus vraiment.',c:'Entrepreneures · Managers · Femmes multi-casquettes épuisées',tr:'"En 10 semaines, passer d\'un état de survie permanent à un équilibre qui tient vraiment."'},'stress+maman':{t:'Équilibre émotionnel pour jeunes mamans',d:'Tu accompagnes les femmes dans la période post-partum élargie — où le corps, les émotions et l\'identité sont encore en reconstruction.',c:'Jeunes mamans · Post-partum · Retour au travail',tr:'"Retrouver ton équilibre intérieur après la naissance — sans culpabilité, sans pression."'},'digestion+jeune':{t:'Relation apaisée à l\'alimentation & digestion',d:'Tu travailles avec des femmes qui ont une relation complexe à la nourriture ou des troubles digestifs chroniques qui empoisonnent leur quotidien.',c:'Femmes 25-40 ans · Troubles digestifs · Alimentation émotionnelle',tr:'"Comprendre ton corps, apaiser ta digestion et retrouver une relation sereine à ce que tu manges."'},'mental+active':{t:'Clarté mentale & gestion des émotions',d:'Tu accompagnes des femmes qui ont de grands projets mais dont la tête les empêche d\'avancer — anxiété, perfectionnisme, procrastination.',c:'Entrepreneures · Femmes ambitieuses bloquées',tr:'"Sortir du mental qui sabote et construire une clarté qui tient."'},'sommeil+jeune':{t:'Récupération profonde & énergie durable',d:'Tu travailles avec des femmes épuisées qui dorment mais ne récupèrent pas — dont le système nerveux est en mode survie permanente.',c:'Femmes 30-45 ans · Insomnie · Fatigue chronique',tr:'"Retrouver un sommeil profond et une énergie qui dure — naturellement."'},'perinatalite+maman':{t:'Accompagnement périnatal & préparation naturelle',d:'Tu prépares les femmes à la naissance et les accompagnes dans le post-partum avec une approche naturelle et holistique.',c:'Femmes enceintes · Jeunes mamans · Post-partum',tr:'"Vivre ta grossesse avec confiance, ton post-partum avec douceur."'}};
+function aStep(q,v){aS['q'+q]=v;document.querySelectorAll('#q'+q+' .arbre-opt').forEach(o=>o.classList.remove('sel'));event.target.classList.add('sel');setTimeout(()=>{const nq=document.getElementById('q'+(q+1));if(nq){nq.classList.add('vis');nq.scrollIntoView({behavior:'smooth',block:'center'});}else{const k=(aS.q1||'')+'+'+(aS.q2||'');const n=N[k]||{t:'Bien-être global & équilibre naturel',d:'Une approche holistique pour des femmes qui cherchent à retrouver un équilibre naturel.',c:'Femmes en quête d\'équilibre naturel',tr:'"Retrouver une vie alignée avec ce que ton corps et ton esprit ont vraiment besoin."'};document.getElementById('nicheT').textContent=n.t;document.getElementById('nicheD').textContent=n.d;document.getElementById('nicheC').textContent=n.c;document.getElementById('nicheTr').textContent=n.tr;const r=document.getElementById('nicheRes');r.classList.add('vis');r.scrollIntoView({behavior:'smooth',block:'center'});}},200);}
+function swOffre(p){document.querySelectorAll('.offre-panel').forEach(e=>e.classList.remove('act'));document.querySelectorAll('.offre-tab').forEach(e=>e.classList.remove('act'));document.getElementById('offre-'+p).classList.add('act');event.target.classList.add('act');}
+function togObj(btn){const b=btn.nextElementSibling,o=b.classList.contains('open');document.querySelectorAll('.obj-body').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.obj-btn').forEach(x=>x.classList.remove('open'));if(!o){b.classList.add('open');btn.classList.add('open');}}
+function cpHook(id,btn){const t=document.getElementById(id).textContent.replace(/"/g,'');navigator.clipboard.writeText(t).then(()=>{btn.textContent='✓ Copié !';btn.classList.add('copied');setTimeout(()=>{btn.textContent='✦ Copier ce hook';btn.classList.remove('copied');},2000);});}
+function togChk(el){el.classList.toggle('done')}
+document.querySelectorAll('input,textarea').forEach(el=>{const k='lybso_'+(el.id||el.placeholder?.slice(0,20)||Math.random());try{const s=localStorage.getItem(k);if(s)el.value=s;}catch(e){}el.addEventListener('input',()=>{try{localStorage.setItem(k,el.value)}catch(e){}});});
+</script>
+</body>
+</html>
